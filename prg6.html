@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <title>search</title>
+</head>
+
+
+<body>
+    <label for="">Enter array Elements</label>
+    <br>
+    <input type="text" name="arr" id="arrStr">
+    <br>
+    <br>
+    <label for="">Enter element to be searched:</label>
+    <br>
+    <input type="text" name="arr" id="keyElement">
+    <br>
+    <br>
+    <button type="submit" id="" onclick="compute();">Search</button>
+    <br>
+    <h3 id="secondHighest"></h3>
+    <h3 id="searchResult"></h3>
+
+    <script>
+        function secondMax(arr) {
+            var max = Math.max.apply(null, arr); // get the max of the array
+            arr.splice(arr.indexOf(max), 1); // remove max from the array
+            return Math.max.apply(null, arr);
+        };
+        function compute() {
+            var arrStr = document.getElementById("arrStr").value;
+            var keyElement = document.getElementById("keyElement").value;
+            if (arrStr == "" || keyElement == "") {
+                alert("Enter both The fields");
+                return;
+            }
+
+            var arr = arrStr.split(',');
+            var index = arr.indexOf(keyElement);
+            var SecondMax = secondMax(arr);
+            var sh = document.getElementById("secondHighest");
+
+            sh.innerHTML = "Second largest number in array: " + SecondMax;
+            var sr = document.getElementById("searchResult");
+            if (index != -1)
+                sr.innerHTML = keyElement + " is found at  " + index+" position";
+            else
+                sr.innerHTML = keyElement + " is not found in the  array";
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

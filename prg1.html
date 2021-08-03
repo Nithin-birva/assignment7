@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC"-//w3c//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtm">
+<head>
+	<title>root</title>
+</head>
+<body style="background-color: black; color: yellow;">
+	<script type="text/javascript">
+
+		var a = prompt("Enter first number: ");
+		var b = prompt("Enter second number: ");
+		var c = prompt("Enter third number: ");
+
+		var root=Math.sqrt(b*b - 4.0*a*c);
+		var quad = 2.0*a;
+
+		var root1 = (-b + root) / quad;
+		var root2 = (-b - root) / quad;
+
+		document.write("first root: ", root1,"<br>");
+		document.write("second root: ", root2,"<br>");
+
+	</script>
+</body>
